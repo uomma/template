@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     search() {
-      console.log('jabjcba');
+      
       console.log(this.store.searchKey);
 
 
