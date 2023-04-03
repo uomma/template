@@ -51,9 +51,11 @@ export default {
                     <h3>{{ original_title }}</h3>
                     <div>{{ getLanguage }}</div>
                     <country-flag :country="getLanguage" size="small" />
-                    <div>{{ getVote }}</div>
-                    <font-awesome-icon :icon="['fas', 'star']" v-for="n in getVote " />
-                    <font-awesome-icon :icon="['far', 'star']" v-for="n in 5 - getVote " />
+                    <div class="getVote">{{ getVote }}</div>
+                    <div class="fa">
+                        <font-awesome-icon :icon="['fas', 'star']" v-for="n in getVote " />
+                        <font-awesome-icon :icon="['far', 'star']" v-for="n in 5 - getVote " />
+                    </div>
                 </div>
             </div>
         </div>
@@ -65,9 +67,9 @@ export default {
 .flip-card {
     background-color: transparent;
     width: 300px;
-    height: 550px;
+    height: 500px;
     perspective: 1000px;
-   
+
 }
 
 /* This container is needed to position the front and back side */
@@ -98,14 +100,26 @@ export default {
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-    color: black;
+    color: white;
 }
 
 /* Style the back side */
 .flip-card-back {
-    background-color: dodgerblue;
+    background-color: black;
     color: white;
     transform: rotateY(180deg);
+
+}
+h2{
+    padding: 5px;
+    font-weight: 700;
+}
+.getVote {
+    color: red;
+}
+
+.fa {
+    color: gold;
 }
 </style>
 
