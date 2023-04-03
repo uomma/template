@@ -24,23 +24,30 @@ export default {
 
         },
 
-        getVote(){
-            return Math.ceil(this.info.vote_average /2);
+        getVote() {
+            return Math.ceil(this.info.vote_average / 2);
 
+        },
+        title() {
+            return this.info.title || this.info.name
+        },
+        original_title() {
+            return this.info.original_title || this.info.original_name
         }
     }
 }
 </script>
 <template>
     <article>
-        <h2>{{ info.title }}</h2>
-        <h3>{{ info.original_title }}</h3>
+        <h2>{{ title }}</h2>
+        <h3>{{ original_title }}</h3>
         <div>{{ getLanguage }}</div>
         <country-flag :country="getLanguage" size="small" />
         <div>{{ getVote }}</div>
-        <font-awesome-icon :icon="['fas', 'star']"  v-for="n in getVote " />
-        <font-awesome-icon :icon="['far', 'star']"  v-for="n in 5-getVote " />
-
+        <font-awesome-icon :icon="['fas', 'star']" v-for="n in getVote " />
+        <font-awesome-icon :icon="['far', 'star']" v-for="n in 5 - getVote " />
+<!--         <img v-for="poster" :src="poster" :alt="title" class= "poster-path">
+ -->
     </article>
 </template>
 
