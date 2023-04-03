@@ -26,7 +26,6 @@ export default {
 
         }
       }).then((response) => {
-        console.log(response);
         this.store.movieList = response.data.results;
       })
 
@@ -45,12 +44,6 @@ export default {
         this.store.TVList = response.data.results;
       })
 
-
-
-
-
-
-
     }
   },
   computed: {
@@ -68,12 +61,13 @@ export default {
   </header>
   <main>
 
-    <h2>all results</h2>
     <ul>
       <li v-for="result in results">
         <CardApp :info="result" />
       </li>
     </ul>
+
+    
   </main>
 </template>
 
