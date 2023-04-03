@@ -46,8 +46,7 @@ export default {
         <div>{{ getVote }}</div>
         <font-awesome-icon :icon="['fas', 'star']" v-for="n in getVote " />
         <font-awesome-icon :icon="['far', 'star']" v-for="n in 5 - getVote " />
-<!--         <img v-for="poster" :src="poster" :alt="title" class= "poster-path">
- -->
+        <img :src="'https://image.tmdb.org/t/p/w342' + info.poster_path" v-if="info.poster_path" />
     </article>
 </template>
 

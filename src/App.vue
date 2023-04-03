@@ -45,6 +45,12 @@ export default {
         this.store.TVList = response.data.results;
       })
 
+
+
+
+
+
+
     }
   },
   computed: {
